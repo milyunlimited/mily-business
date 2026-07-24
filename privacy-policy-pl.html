@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="pl" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polityka prywatności — Mily Unlimited</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <style>
+        :root {
+            --bg-color: #ffffff;
+            --text-color: #0a0a0a;
+            --text-muted: #6b7280;
+            --text-accent: #6366f1;
+            --border: rgba(0,0,0,0.08);
+        }
+
+        [data-theme="dark"] {
+            --bg-color: #0a0a0a;
+            --text-color: #f5f5f5;
+            --text-muted: #9ca3af;
+            --text-accent: #818cf8;
+            --border: rgba(255,255,255,0.08);
+        }
+
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        html, body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 40px;
+            background: var(--bg-color);
+            border-bottom: 1px solid var(--border);
+            z-index: 100;
+        }
+
+        .nav-logo a {
+            font-size: 15px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-decoration: none;
+            color: var(--text-color);
+        }
+
+        .nav-logo span { font-weight: 300; color: var(--text-muted); margin-left: 6px; font-size: 13px; }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .nav-back {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            text-decoration: none;
+            font-size: 13.5px;
+            font-weight: 500;
+            color: var(--text-muted);
+            transition: color 0.2s ease;
+        }
+
+        .nav-back:hover { color: var(--text-color); }
+        .nav-back svg { width: 15px; height: 15px; stroke-width: 2px; }
+
+        .nav-lang {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            text-decoration: none;
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--text-muted);
+            padding: 5px 10px;
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            transition: color 0.2s ease, border-color 0.2s ease;
+        }
+
+        .nav-lang:hover { color: var(--text-accent); border-color: var(--text-accent); }
+        .nav-lang svg { width: 13px; height: 13px; stroke-width: 2px; }
+
+        .page-wrapper {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 130px 40px 100px;
+        }
+
+        .page-tag {
+            font-size: 11px;
+            letter-spacing: 3px;
+            font-weight: 700;
+            color: var(--text-accent);
+            text-transform: uppercase;
+            display: block;
+            margin-bottom: 12px;
+        }
+
+        .page-title {
+            font-size: clamp(28px, 4vw, 44px);
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            line-height: 1.15;
+            margin-bottom: 12px;
+        }
+
+        .page-subtitle {
+            font-size: 15px;
+            color: var(--text-muted);
+            margin-bottom: 56px;
+        }
+
+        .terms-section {
+            margin-bottom: 48px;
+            padding-bottom: 48px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .terms-section:last-child { border-bottom: none; }
+
+        .terms-section h2 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: var(--text-color);
+        }
+
+        .terms-section p {
+            font-size: 15px;
+            color: var(--text-muted);
+            line-height: 1.75;
+            margin-bottom: 12px;
+        }
+
+        .terms-section p:last-child { margin-bottom: 0; }
+
+        .terms-section ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 12px;
+        }
+
+        .terms-section ul li {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            font-size: 15px;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        .terms-section ul li::before {
+            content: '—';
+            color: var(--text-accent);
+            font-weight: 700;
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+
+        .highlight-box {
+            background: rgba(99,102,241,0.05);
+            border-left: 3px solid var(--text-accent);
+            border-radius: 0 8px 8px 0;
+            padding: 16px 20px;
+            margin: 20px 0;
+            font-size: 14.5px;
+            color: var(--text-muted);
+            line-height: 1.65;
+        }
+
+        .third-party-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 16px;
+            font-size: 14px;
+        }
+
+        .third-party-table th {
+            text-align: left;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            padding: 8px 12px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .third-party-table td {
+            padding: 12px;
+            color: var(--text-muted);
+            border-bottom: 1px solid var(--border);
+            vertical-align: top;
+            line-height: 1.5;
+        }
+
+        .third-party-table tr:last-child td { border-bottom: none; }
+
+        .third-party-table td:first-child {
+            font-weight: 600;
+            color: var(--text-color);
+            white-space: nowrap;
+        }
+
+        .third-party-table a {
+            color: var(--text-accent);
+            text-decoration: none;
+        }
+
+        .third-party-table a:hover { text-decoration: underline; }
+
+        .page-footer {
+            margin-top: 80px;
+            padding-top: 32px;
+            border-top: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .page-footer p { font-size: 13px; color: var(--text-muted); }
+
+        .page-footer a {
+            font-size: 13px;
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .page-footer a:hover { color: var(--text-accent); }
+
+        @media (max-width: 600px) {
+            .navbar { padding: 0 24px; }
+            .page-wrapper { padding: 110px 24px 80px; }
+            .nav-lang span { display: none; }
+            .third-party-table { font-size: 13px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-logo">
+            <a href="index.html">Mily Unlimited <span>Dla Biznesu</span></a>
+        </div>
+        <div class="nav-right">
+            <a href="privacy-policy.html" class="nav-lang">
+                <i data-lucide="globe"></i>
+                <span>English</span>
+            </a>
+            <a href="index.html" class="nav-back">
+                <i data-lucide="arrow-left"></i> Wróć
+            </a>
+        </div>
+    </nav>
+
+    <div class="page-wrapper">
+
+        <span class="page-tag">Prawne</span>
+        <h1 class="page-title">Polityka prywatności.</h1>
+        <p class="page-subtitle">Ostatnia aktualizacja: lipiec 2026 &nbsp;·&nbsp; Prawo polskie (stosuje się RODO).</p>
+
+        <div class="terms-section">
+            <h2>Kto jest odpowiedzialny za Twoje dane</h2>
+            <p>Administratorem danych osobowych przetwarzanych w związku z tą stroną jest:</p>
+            <div class="highlight-box">
+                <strong>Miłosz Boguniewicz</strong><br>
+                Polska<br>
+                hello@milyunlimited.eu
+            </div>
+            <p>Jeśli masz jakiekolwiek pytania dotyczące przetwarzania danych, skontaktuj się bezpośrednio przez email.</p>
+        </div>
+
+        <div class="terms-section">
+            <h2>Jakie dane zbieram i po co</h2>
+            <p>Ta strona zbiera absolutne minimum. Oto pełny obraz:</p>
+            <ul>
+                <li><strong>Adres email</strong> — tylko jeśli kontaktujesz się ze mną bezpośrednio przez link na tej stronie. Używam go wyłącznie do odpowiedzi na Twoje zapytanie i, jeśli nawiążemy współpracę, do zarządzania relacją projektową.</li>
+                <li><strong>Logi serwera</strong> — GitHub Pages (serwis hostingowy tej strony) może automatycznie zbierać adresy IP i informacje o przeglądarce jako część standardowego logowania serwera. Jest to poza moją bezpośrednią kontrolą. Szczegóły znajdziesz w polityce prywatności GitHub.</li>
+            </ul>
+            <p>Nie używam żadnych narzędzi analitycznych, pikseli śledzących, sieci reklamowych ani własnych plików cookie.</p>
+        </div>
+
+        <div class="terms-section">
+            <h2>Jak długo przechowuję Twoje dane</h2>
+            <p>Jeśli skontaktujesz się ze mną przez email, przechowuję tę korespondencję przez czas trwania ewentualnej współpracy oraz przez rozsądny okres po jej zakończeniu — zazwyczaj na potrzeby obsługi pytań lub ewentualnych sporów. Nie archiwizuję emaili bezterminowo.</p>
+        </div>
+
+        <div class="terms-section">
+            <h2>Usługi zewnętrzne</h2>
+            <p>Ta strona ładuje zasoby od niewielkiej liczby zewnętrznych dostawców. Za każdym razem gdy ją odwiedzasz, Twoja przeglądarka łączy się z tymi serwisami i mogą one przetwarzać Twój adres IP zgodnie z własną polityką prywatności.</p>
+
+            <table class="third-party-table">
+                <thead>
+                    <tr>
+                        <th>Serwis</th>
+                        <th>Cel</th>
+                        <th>Polityka prywatności</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>GitHub Pages</td>
+                        <td>Hosting strony</td>
+                        <td><a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener">GitHub Privacy Statement</a></td>
+                    </tr>
+                    <tr>
+                        <td>Google Fonts</td>
+                        <td>Typografia (czcionka Ubuntu)</td>
+                        <td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a></td>
+                    </tr>
+                    <tr>
+                        <td>unpkg.com</td>
+                        <td>Biblioteka ikon (Lucide)</td>
+                        <td><a href="https://www.npmjs.com/policies/privacy" target="_blank" rel="noopener">npm Privacy Policy</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="terms-section">
+            <h2>Twoje prawa wynikające z RODO</h2>
+            <p>Jako osoba przebywająca na terenie UE/EOG masz prawo do:</p>
+            <ul>
+                <li>Dostępu do danych osobowych które przechowuję na Twój temat</li>
+                <li>Żądania sprostowania nieprawidłowych danych</li>
+                <li>Żądania usunięcia danych</li>
+                <li>Sprzeciwu wobec przetwarzania lub jego ograniczenia</li>
+                <li>Wniesienia skargi do organu nadzorczego — w Polsce jest to <a href="https://uodo.gov.pl" target="_blank" rel="noopener" style="color:var(--text-accent)">UODO (Urząd Ochrony Danych Osobowych)</a></li>
+            </ul>
+            <p>Aby skorzystać z któregokolwiek z tych praw, skontaktuj się ze mną pod adresem contact@milyunlimited.com.</p>
+        </div>
+
+        <div class="terms-section">
+            <h2>Zmiany w polityce</h2>
+            <p>Jeśli cokolwiek istotnego się zmieni — nowe serwisy, nowe zbierane dane — zaktualizuję tę stronę i datę na górze. Nic tu nie zmieni się bez odzwierciedlenia na tej stronie.</p>
+        </div>
+
+        <div class="page-footer">
+            <p>&copy; 2026 Mily Unlimited Dla Biznesu</p>
+            <div style="display:flex;gap:20px;">
+                <a href="terms-pl.html">Warunki usługi</a>
+                <a href="index.html">Wróć na stronę</a>
+            </div>
+        </div>
+
+    </div>
+
+    <script>lucide.createIcons();</script>
+</body>
+</html>

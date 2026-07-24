@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service — Mily Unlimited</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <style>
+        :root {
+            --bg-color: #ffffff;
+            --text-color: #0a0a0a;
+            --text-muted: #6b7280;
+            --text-accent: #6366f1;
+            --border: rgba(0,0,0,0.08);
+        }
+
+        [data-theme="dark"] {
+            --bg-color: #0a0a0a;
+            --text-color: #f5f5f5;
+            --text-muted: #9ca3af;
+            --text-accent: #818cf8;
+            --border: rgba(255,255,255,0.08);
+        }
+
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        html, body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* NAV */
+        .navbar {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 40px;
+            background: var(--bg-color);
+            border-bottom: 1px solid var(--border);
+            z-index: 100;
+        }
+
+        .nav-logo a {
+            font-size: 15px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-decoration: none;
+            color: var(--text-color);
+        }
+
+        .nav-logo span { font-weight: 300; color: var(--text-muted); margin-left: 6px; font-size: 13px; }
+
+        .nav-back {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            text-decoration: none;
+            font-size: 13.5px;
+            font-weight: 500;
+            color: var(--text-muted);
+            transition: color 0.2s ease;
+        }
+
+        .nav-back:hover { color: var(--text-color); }
+        .nav-back svg { width: 15px; height: 15px; stroke-width: 2px; }
+
+        /* PAGE */
+        .page-wrapper {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 130px 40px 100px;
+        }
+
+        .page-tag {
+            font-size: 11px;
+            letter-spacing: 3px;
+            font-weight: 700;
+            color: var(--text-accent);
+            text-transform: uppercase;
+            display: block;
+            margin-bottom: 12px;
+        }
+
+        .page-title {
+            font-size: clamp(28px, 4vw, 44px);
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            line-height: 1.15;
+            margin-bottom: 12px;
+        }
+
+        .page-subtitle {
+            font-size: 15px;
+            color: var(--text-muted);
+            margin-bottom: 56px;
+        }
+
+        /* SECTIONS */
+        .terms-section {
+            margin-bottom: 48px;
+            padding-bottom: 48px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .terms-section:last-child {
+            border-bottom: none;
+        }
+
+        .terms-section h2 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: var(--text-color);
+        }
+
+        .terms-section p {
+            font-size: 15px;
+            color: var(--text-muted);
+            line-height: 1.75;
+            margin-bottom: 12px;
+        }
+
+        .terms-section p:last-child { margin-bottom: 0; }
+
+        .terms-section ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 12px;
+        }
+
+        .terms-section ul li {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            font-size: 15px;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        .terms-section ul li::before {
+            content: '—';
+            color: var(--text-accent);
+            font-weight: 700;
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+
+        .highlight-box {
+            background: rgba(99,102,241,0.05);
+            border-left: 3px solid var(--text-accent);
+            border-radius: 0 8px 8px 0;
+            padding: 16px 20px;
+            margin: 20px 0;
+            font-size: 14.5px;
+            color: var(--text-muted);
+            line-height: 1.65;
+        }
+
+        /* FOOTER */
+        .page-footer {
+            margin-top: 80px;
+            padding-top: 32px;
+            border-top: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .page-footer p {
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        .page-footer a {
+            font-size: 13px;
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .page-footer a:hover { color: var(--text-accent); }
+
+        @media (max-width: 600px) {
+            .navbar { padding: 0 24px; }
+            .page-wrapper { padding: 110px 24px 80px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-logo">
+            <a href="index.html">Mily Unlimited <span>For Business</span></a>
+        </div>
+        <a href="index.html" class="nav-back">
+            <i data-lucide="arrow-left"></i> Back
+        </a>
+    </nav>
+
+    <div class="page-wrapper">
+
+        <span class="page-tag">Legal</span>
+        <h1 class="page-title">Terms of Service.</h1>
+        <p class="page-subtitle">Last updated: July 2026 &nbsp;·&nbsp; Governed by Polish law.</p>
+
+        <div class="terms-section">
+            <h2>How it starts</h2>
+            <p>Before any work begins, we have a conversation. I want to understand what you actually need — the scope, the timeline, any constraints. From there I'll put together a brief outlining what I'll do, how long it'll take, and what it'll cost.</p>
+            <p>Work starts once we've both agreed on that brief. The formal document we sign is a <strong>umowa zlecenie</strong> (contract for specific work) under Polish law.</p>
+        </div>
+
+        <div class="terms-section">
+            <h2>How I charge</h2>
+            <p>I work on a <strong>time and materials basis</strong> — you pay for hours worked, not a fixed outcome. This means:</p>
+            <ul>
+                <li>Hours are logged and reported transparently</li>
+                <li>If scope changes, we talk about it before I spend more time on it</li>
+                <li>No surprise invoices</li>
+            </ul>
+            <div class="highlight-box">
+                Payment is typically due on delivery. For longer projects I'm open to upfront billing or milestone-based payments — we agree on this before we start.
+            </div>
+        </div>
+
+        <div class="terms-section">
+            <h2>After delivery</h2>
+            <p>Every project includes a support period after handover. During that time I'm available to fix bugs, answer questions and make small adjustments related to the original scope.</p>
+            <p>If you need ongoing support beyond that, we can extend the arrangement. That's a separate agreement — same format, same transparency.</p>
+        </div>
+
+        <div class="terms-section">
+            <h2>Ownership</h2>
+            <p>Once the project is fully paid for, everything I built for you is yours. Code, designs, documentation — all of it transfers to you. I don't retain rights or licenses over work you've paid for.</p>
+        </div>
+
+        <div class="terms-section">
+            <h2>Confidentiality</h2>
+            <p>Whatever you share with me stays between us. I don't talk about client projects publicly, reference them without permission, or share technical or business details with third parties.</p>
+        </div>
+
+        <div class="terms-section">
+            <h2>If something goes wrong</h2>
+            <p>I take quality seriously. If something I delivered doesn't work as agreed, I'll fix it — that's what the support period is for.</p>
+            <p>That said, I'm not liable for indirect losses, loss of revenue, or issues arising from how my work is integrated into systems I didn't build or maintain.</p>
+        </div>
+
+        <div class="terms-section">
+            <h2>Governing law</h2>
+            <p>These terms and any agreement we sign are governed by Polish law. Any disputes would be handled by a competent court in Poland.</p>
+        </div>
+
+        <div class="page-footer">
+            <p>&copy; 2026 Mily Unlimited For Business</p>
+            <div style="display:flex;gap:20px;">
+                <a href="privacy-policy.html">Privacy Policy</a>
+                <a href="index.html">Back to site</a>
+            </div>
+        </div>
+
+    </div>
+
+    <script>lucide.createIcons();</script>
+</body>
+</html>
